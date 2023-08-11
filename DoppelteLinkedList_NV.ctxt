@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=DoppelteLinkedList_NV
+comment1.params=
+comment1.target=DoppelteLinkedList_NV()
+comment2.params=nv
+comment2.target=void\ addHead(Nhan_Vien)
+comment3.params=nv
+comment3.target=void\ addTail(Nhan_Vien)
+comment4.params=index\ nv
+comment4.target=void\ addIndex(int,\ Nhan_Vien)
+comment5.params=
+comment5.target=void\ removeHead()
+comment6.params=
+comment6.target=void\ removeTail()
+comment7.params=index
+comment7.target=void\ removeIndex(int)
+comment8.params=
+comment8.target=void\ invertierenList()
+numComments=9
