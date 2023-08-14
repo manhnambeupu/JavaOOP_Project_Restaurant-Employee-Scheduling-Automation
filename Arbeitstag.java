@@ -21,7 +21,7 @@ public class Arbeitstag
         return _möglich_arbeit_nv;
     }
     
-    public String to(){
+    public String showÌnfor(){
         StringBuilder sb = new StringBuilder();
         sb.append("Ngày ").append(_tag).append(": ");
         for (Nhan_Vien nv : _möglich_arbeit_nv) {

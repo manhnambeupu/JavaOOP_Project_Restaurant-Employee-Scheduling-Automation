@@ -31,7 +31,7 @@ public class Main2
         Iterator<Arbeitstag> iterator = sapxeplist.iterator();
         while (iterator.hasNext()) {
             Arbeitstag arbeistag = iterator.next();
-            System.out.println( arbeitstag.to());
+            System.out.println( arbeitstag.showÌnfor());
         }
     }
     
