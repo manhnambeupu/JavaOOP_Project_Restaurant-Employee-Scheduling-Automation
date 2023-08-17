@@ -15,9 +15,9 @@ public class Main2
         //
         List<Nhan_Vien> list_nhan_vien = new ArrayList<>();
         
-        list_nhan_vien.add(new Nhan_Vien("Lan", new int[]{2,3}));
-        list_nhan_vien.add(new Nhan_Vien("Nam",new int[]{5,6}));
-        list_nhan_vien.add(new Nhan_Vien("Tung",new int[]{2}));
+        list_nhan_vien.add(new Nhan_Vien("Lan", null));
+        list_nhan_vien.add(new Nhan_Vien("Nam",null));
+        list_nhan_vien.add(new Nhan_Vien("Tung",null));
         list_nhan_vien.add(new Nhan_Vien("Long",null));
         
         //Sep lich ngau nhien
@@ -31,7 +31,7 @@ public class Main2
         Iterator<Arbeitstag> iterator = sapxeplist.iterator();
         while (iterator.hasNext()) {
             Arbeitstag arbeistag = iterator.next();
-            System.out.println( arbeitstag.showÌnfor());
+            System.out.println( arbeistag.toString());
         }
     }
     
