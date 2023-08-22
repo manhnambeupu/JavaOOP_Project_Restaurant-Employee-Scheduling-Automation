@@ -10,15 +10,11 @@ public class Nhan_Vien
     private Freitag _ca_Freitag;
     private Samstag _ca_Samstag;
     private Sonntag _ca_Sonntag;
-    
+    private int _arbeitZeit_Monat;  
     private List <Object> _arbeitZeitMöglich; 
    
-    public List<Object> arbeitZeitMöglich_List(){
-        List <Object> arbeitZeitMöglich = this._arbeitZeitMöglich;  
-        return arbeitZeitMöglich;
-    }
-    
-    public Nhan_Vien(String name, int[]nicht_arbeit){
+    public Nhan_Vien(String name, int[]nicht_arbeit,int stunde){
+        this._arbeitZeit_Monat = stunde;
         this._name = name;
         this._ca_Montag = new Montag(); 
         this._ca_Dienstag = new Dienstag(); 
@@ -42,7 +38,12 @@ public class Nhan_Vien
     public String getName(){
         return _name;
     }
-     
+    
+    public List<Object> arbeitZeitMöglich_List(){
+        List <Object> arbeitZeitMöglich = this._arbeitZeitMöglich;  
+        return arbeitZeitMöglich;
+    }
+    
     public void add_Arbeit_Möglich(){
         if(_ca_Montag == null && _ca_Dienstag == null && _ca_Mittwoch == null && _ca_Donnerstag == null && _ca_Freitag == null && _ca_Samstag == null && _ca_Sonntag == null){
             throw new IllegalArgumentException("Nhan vien nay nghi ca tuan nay");    
@@ -72,6 +73,8 @@ public class Nhan_Vien
     
     public void Nicht_Arbeitstag(int Tag){
         switch(Tag){
+            case 0,1:
+                throw new IllegalArgumentException("Yeu cau chi dien 2(thu2),3(thu3),4(thu4),5(thu5),6(thu6),7(thu7),8(Chu Nhat)");
             case 2: _ca_Montag = null ;  break;
             case 3: _ca_Dienstag = null;   break;
             case 4: _ca_Mittwoch = null;  break;
@@ -86,6 +89,8 @@ public class Nhan_Vien
     public boolean MöglichArbeitInTag(int Tag){
         boolean bool = true;
         switch(Tag){
+            case 0,1:
+                throw new IllegalArgumentException("Yeu cau chi dien 2(thu2),3(thu3),4(thu4),5(thu5),6(thu6),7(thu7),8(Chu Nhat)");
             case 2:
                 if(_ca_Montag != null){bool = true;}
                 else{bool = false;}
@@ -109,4 +114,17 @@ public class Nhan_Vien
         }
         return bool;
     }
+    
+    public int arbeitszeit_Anmelden (int stunde){
+        if(stunde == 0){
+            throw new IllegalArgumentException("Yeu cau dien lai so tieng lam hom nay");
+        }
+        _arbeitZeit_Monat = _arbeitZeit_Monat + stunde;
+        return _arbeitZeit_Monat;
+    }
+    
+    public int gesamt_stunde(){
+        return this._arbeitZeit_Monat;
+    }
+    
 }

@@ -15,10 +15,12 @@ public class Main2
         //
         List<Nhan_Vien> list_nhan_vien = new ArrayList<>();
         
-        list_nhan_vien.add(new Nhan_Vien("Lan", null));
-        list_nhan_vien.add(new Nhan_Vien("Nam",null));
-        list_nhan_vien.add(new Nhan_Vien("Tung",null));
-        list_nhan_vien.add(new Nhan_Vien("Long",null));
+        list_nhan_vien.add(new Nhan_Vien("Lan", null,170));
+        list_nhan_vien.add(new Nhan_Vien("Nam",null,150));
+        list_nhan_vien.add(new Nhan_Vien("Tung",null,160));
+        list_nhan_vien.add(new Nhan_Vien("Long",null,200));
+        
+        
         
         //Sep lich ngau nhien
         List<Arbeitstag> sapxeplist= list_SapXep(list_nhan_vien, arbeitstag, minNhanVien);
@@ -36,7 +38,7 @@ public class Main2
     }
     
     /**
-     * Xao tron danh sach nhan vien
+     * shuffel List
      */
     public static void shuffleNhanVien(List<Nhan_Vien> nhanvien){
         long time = System.nanoTime();
@@ -44,7 +46,10 @@ public class Main2
     }
     
     public static List<Arbeitstag> list_SapXep(List<Nhan_Vien> nhanvien, List<Integer> arbeitstag, int[] minNhanVien){
+        
         shuffleNhanVien(nhanvien);
+        quickSort(nhanvien,0,nhanvien.size()-1);
+
         List<Arbeitstag> list_pro_tag = new ArrayList<>();
         for(int tag : arbeitstag){
             int required_nv_pro_tag = minNhanVien[tag];
@@ -63,5 +68,43 @@ public class Main2
             list_pro_tag.add(new Arbeitstag(tag,arbeit_nv ));
         }
         return list_pro_tag;    
+    }
+    /**
+     * QuickSort-Alogrithm
+     * @param L sollt Index 0 eingeben( 0 wurde initialisiert )
+     * @param R sollt letzte Index von List eingeben( nv.size()-1 wurde initialisiert )
+     */
+    static void quickSort(List<Nhan_Vien> nv, int L, int R){
+        if(L >= R){return;}  
+        Nhan_Vien key = nv.get((L+R)/2);
+        int k = partition(nv,L,R,key);
+        quickSort(nv,L,k-1);
+        quickSort(nv,k,R);
+    }
+    /**
+     * Partition Methode, um Employees_List zuverteilen 
+     * @param L sollt Index 0 eingeben( 0 wurde initialisiert )
+     * @param R sollt letzte Index von List eingeben( nv.size() wurde initialisiert )
+     * @param key sollt Pivot_Value eingeben (Nhan Vien (Key) )
+     */
+    static int partition(List<Nhan_Vien> nv, int L, int R, Nhan_Vien key){
+        int iL = L;
+        int iR = R;
+        while(iL <= iR){
+            //move pointer iL, wenn StundeVonLink  kleiner als recht ist
+            while(nv.get(iL).gesamt_stunde() < key.gesamt_stunde()){iL++;}
+            //move pointer iR, wenn StundeVonRecht grosser als link ist
+            while(nv.get(iR).gesamt_stunde() > key.gesamt_stunde()){iR--;}
+            //Wenn index(bei dieser Pointer_Position) von iL noch <= iR
+            // Umtauschen mit logik (Kleiner bleiben unbedingt Link und Grosser beleiben unbedingt recht)
+            if(iL <= iR){
+                Nhan_Vien temp = nv.get(iL);
+                nv.set(iL,nv.get(iR));
+                nv.set(iR, temp);
+                iL++; 
+                iR--;
+            }
+        }
+        return iL;
     }
 }

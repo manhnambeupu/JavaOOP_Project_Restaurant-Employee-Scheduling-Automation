@@ -5,7 +5,7 @@ public class Main
 {
     public static void main(String[] args)
     {
-        Nhan_Vien Lan = new Nhan_Vien("Lan",new int[]{3,6} );
+        Nhan_Vien Lan = new Nhan_Vien("Lan",new int[]{3,6},10 );
         List<Object> list = Lan.arbeitZeitMöglich_List();
         System.out.println(Lan.toString() + "(ngay co the lam trong tuan)");
         for (Object obj : list)

@@ -1,15 +1,19 @@
 #BlueJ class context
 comment0.target=Nhan_Vien
-comment1.params=
-comment1.target=java.util.List\ arbeitZeitM\u00F6glich_List()
-comment2.params=name\ nicht_arbeit
-comment2.target=Nhan_Vien(java.lang.String,\ int[])
+comment1.params=name\ nicht_arbeit\ stunde
+comment1.target=Nhan_Vien(java.lang.String,\ int[],\ int)
+comment2.params=
+comment2.target=java.lang.String\ getName()
 comment3.params=
-comment3.target=java.lang.String\ getName()
+comment3.target=java.util.List\ arbeitZeitM\u00F6glich_List()
 comment4.params=
 comment4.target=void\ add_Arbeit_M\u00F6glich()
 comment5.params=Tag
 comment5.target=void\ Nicht_Arbeitstag(int)
 comment6.params=Tag
 comment6.target=boolean\ M\u00F6glichArbeitInTag(int)
-numComments=7
+comment7.params=stunde
+comment7.target=int\ arbeitszeit_Anmelden(int)
+comment8.params=
+comment8.target=int\ gesamt_stunde()
+numComments=9
