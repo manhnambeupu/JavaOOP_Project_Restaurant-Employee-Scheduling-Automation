@@ -1,3 +1,8 @@
+/**
+ * Dieser Klasse modelliert die Tage und Arbeitsschicht der Tages in der Woche  
+ * @author (Tran Manh Nam)
+ * @version (22.08.2023)
+ */
 public class Woche
 {
     private Montag _Montag;

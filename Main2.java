@@ -5,31 +5,30 @@ import java.util.Random;
 import java.util.Iterator; 
 public class Main2
 {
+    /**
+     * Main
+     */
     public static void main(String[] args){
-        //Xac dinh cac ngay lam viec trong tuan tu thu 2 den chu nhat
+        //Tag to Integer, um danach einfacher mit if else zuverwenden
         Arbeitstag_Nummer_List listArb = new Arbeitstag_Nummer_List();
         List<Integer> arbeitstag = listArb.ShowArbeitstag();
-        //Xac dinh so nhan vien toi thieu can lam viec trong ngay
+        //Bestimmen Wie viele Mitarbeiter muss minimum im Tag arbeiten
         minNhanVien minnv = new minNhanVien();
         int[] minNhanVien = minnv.ShowMinNhanVien();
-        //
+        
+        //List der Mitarbeitern wurden deklariert
         List<Nhan_Vien> list_nhan_vien = new ArrayList<>();
         
         list_nhan_vien.add(new Nhan_Vien("Lan", null,170));
         list_nhan_vien.add(new Nhan_Vien("Nam",null,150));
         list_nhan_vien.add(new Nhan_Vien("Tung",null,160));
-        list_nhan_vien.add(new Nhan_Vien("Long",null,200));
+        list_nhan_vien.add(new Nhan_Vien("Long",null,100));
         
-        
-        
-        //Sep lich ngau nhien
+        //Planen fur die Mitarbeiter
         List<Arbeitstag> sapxeplist= list_SapXep(list_nhan_vien, arbeitstag, minNhanVien);
+        System.out.println("Plan in dieser Woche");
         
-        //Show result
-        System.out.println("Lich lam viec");
-        // for(Arbeitstag arbeistag : sapxeplist){
-             // System.out.println(arbeitstag.to());
-        // }
+        //toString des Plan  
         Iterator<Arbeitstag> iterator = sapxeplist.iterator();
         while (iterator.hasNext()) {
             Arbeitstag arbeistag = iterator.next();
@@ -38,14 +37,21 @@ public class Main2
     }
     
     /**
-     * shuffel List
+     * shuffelNhanVien-Methode:Es wird verwendet, um diese Situation zu vermeiden. 
+     * Nachteile des QuickSort-Algorithmus: Die Leistung kann schlecht sein, wenn die Sequenz fast sortiert ist
      */
-    public static void shuffleNhanVien(List<Nhan_Vien> nhanvien){
+    static void shuffleNhanVien(List<Nhan_Vien> nhanvien){
         long time = System.nanoTime();
         Collections.shuffle(nhanvien, new Random(time));
     }
     
-    public static List<Arbeitstag> list_SapXep(List<Nhan_Vien> nhanvien, List<Integer> arbeitstag, int[] minNhanVien){
+    /**
+     * Methode list_sap_xep macht fur die Mitarbeiter Plan in der Woche 
+     * @param nhanvien ist List der Mitarbeitern 
+     * @param arbeitstag ist Tag to Integer, um danach einfacher mit if else zuverwenden
+     * @param minNhanVien bestimmen, Wie viele Mitarbeiter muss minimum im Tag arbeiten
+     */
+    static List<Arbeitstag> list_SapXep(List<Nhan_Vien> nhanvien, List<Integer> arbeitstag, int[] minNhanVien){
         
         shuffleNhanVien(nhanvien);
         quickSort(nhanvien,0,nhanvien.size()-1);
@@ -56,19 +62,23 @@ public class Main2
             List <Nhan_Vien>  arbeit_nv = new ArrayList<>();
             for(Nhan_Vien nv: nhanvien){
                 if(nv.MöglichArbeitInTag(tag)){
-                    arbeit_nv.add(nv);
+                    nv.countTag();
+                    if(nv.getGesamt_Tag()<=4){//die arbeiten weniger, muss 4 Tag pro Woche arbeiten 
+                        arbeit_nv.add(nv);
+                    }
                 }
                 if(arbeit_nv.size() == required_nv_pro_tag){
                     break;
                 }
             }
             if(arbeit_nv.size() < required_nv_pro_tag){
-                throw new IllegalArgumentException("Khong du nhan vien cho ngay");
+                  throw new IllegalArgumentException("Khong du nhan vien cho ngay");
             }
             list_pro_tag.add(new Arbeitstag(tag,arbeit_nv ));
         }
         return list_pro_tag;    
     }
+    
     /**
      * QuickSort-Alogrithm
      * @param L sollt Index 0 eingeben( 0 wurde initialisiert )
@@ -81,6 +91,7 @@ public class Main2
         quickSort(nv,L,k-1);
         quickSort(nv,k,R);
     }
+    
     /**
      * Partition Methode, um Employees_List zuverteilen 
      * @param L sollt Index 0 eingeben( 0 wurde initialisiert )

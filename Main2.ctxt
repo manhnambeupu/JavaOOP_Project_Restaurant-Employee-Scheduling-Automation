@@ -2,11 +2,13 @@
 comment0.target=Main2
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
+comment1.text=\r\n\ Main\r\n
 comment2.params=nhanvien
 comment2.target=void\ shuffleNhanVien(java.util.List)
-comment2.text=\r\n\ shuffel\ List\r\n
+comment2.text=\r\n\ shuffelNhanVien-Methode\:Es\ wird\ verwendet,\ um\ diese\ Situation\ zu\ vermeiden.\ \r\n\ Nachteile\ des\ QuickSort-Algorithmus\:\ Die\ Leistung\ kann\ schlecht\ sein,\ wenn\ die\ Sequenz\ fast\ sortiert\ ist\r\n
 comment3.params=nhanvien\ arbeitstag\ minNhanVien
 comment3.target=java.util.List\ list_SapXep(java.util.List,\ java.util.List,\ int[])
+comment3.text=\r\n\ Methode\ list_sap_xep\ macht\ fur\ die\ Mitarbeiter\ Plan\ in\ der\ Woche\ \r\n\ @param\ nhanvien\ ist\ List\ der\ Mitarbeitern\ \r\n\ @param\ arbeitstag\ ist\ Tag\ to\ Integer,\ um\ danach\ einfacher\ mit\ if\ else\ zuverwenden\r\n\ @param\ minNhanVien\ bestimmen,\ Wie\ viele\ Mitarbeiter\ muss\ minimum\ im\ Tag\ arbeiten\r\n
 comment4.params=nv\ L\ R
 comment4.target=void\ quickSort(java.util.List,\ int,\ int)
 comment4.text=\r\n\ QuickSort-Alogrithm\r\n\ @param\ L\ sollt\ Index\ 0\ eingeben(\ 0\ wurde\ initialisiert\ )\r\n\ @param\ R\ sollt\ letzte\ Index\ von\ List\ eingeben(\ nv.size()-1\ wurde\ initialisiert\ )\r\n

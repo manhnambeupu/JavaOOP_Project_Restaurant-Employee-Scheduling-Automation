@@ -1,7 +1,10 @@
 #BlueJ class context
 comment0.target=Ca1
+comment0.text=\r\n\ Dieser\ Klasse\ modelliert\ das\ 1.Arbeitsschicht\ des\ Montags,Dienstags,Mittwoch,Donnerstag,Freitag\ in\ der\ Woche\ \ \r\n\ @author\ (Tran\ Manh\ Nam)\r\n\ @version\ (22.08.2023)\r\n
 comment1.params=
 comment1.target=Ca1()
+comment1.text=\r\n\ Initialisiert\ die\ 1.Arbeitssichten\ des\ 2,3,4,5,6\ \r\n
 comment2.params=
 comment2.target=java.lang.String\ toString()
+comment2.text=\r\n\ 1.Arbeitssichten\ des\ 2,3,4,5,6\ toString\r\n
 numComments=3

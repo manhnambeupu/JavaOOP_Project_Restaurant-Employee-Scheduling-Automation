@@ -1,9 +1,13 @@
 #BlueJ class context
 comment0.target=Mittwoch
+comment0.text=\r\n\ Dieser\ Klasse\ modelliert\ das\ Arbeitsschicht\ des\ Mittwoch\ in\ der\ Woche\ \ \r\n\ @author\ (Tran\ Manh\ Nam)\r\n\ @version\ (22.08.2023)\r\n
 comment1.params=
 comment1.target=Mittwoch()
+comment1.text=\r\n\ Initialisiert\ die\ Arbeitssichten\ des\ Mittwoch\r\n
 comment2.params=
 comment2.target=java.lang.String\ toString()
+comment2.text=\r\n\ Override\ Object\ Mittwoch\ toString\r\n
 comment3.params=
 comment3.target=java.lang.String\ ca()
+comment3.text=\r\n\ Arbeitssichten\ des\ Mittwoch\ toString\r\n
 numComments=4

@@ -1,5 +1,11 @@
 import java.util.ArrayList;
 import java.util.List; 
+/**
+ * Dieser Klasse modelliert das Object-Mitarbeiter 
+ * in Klasse gibt Name, MoglichArbeitstagList, ArbeitStunde der Mitarbeiter
+ * @author (Tran Manh Nam)
+ * @version (22.08.2023)
+ */
 public class Nhan_Vien
 {
     private String _name;
@@ -11,8 +17,11 @@ public class Nhan_Vien
     private Samstag _ca_Samstag;
     private Sonntag _ca_Sonntag;
     private int _arbeitZeit_Monat;  
-    private List <Object> _arbeitZeitMöglich; 
-   
+    private List <Object> _arbeitZeitMöglich;
+    private int _gesamt_Tag;
+    /**
+     * Initialisiert Object-Mitarbeiter
+     */
     public Nhan_Vien(String name, int[]nicht_arbeit,int stunde){
         this._arbeitZeit_Monat = stunde;
         this._name = name;
@@ -22,7 +31,8 @@ public class Nhan_Vien
         this._ca_Donnerstag = new Donnerstag(); 
         this._ca_Freitag = new Freitag(); 
         this._ca_Samstag = new Samstag(); 
-        this._ca_Sonntag = new Sonntag(); 
+        this._ca_Sonntag = new Sonntag();
+        this._gesamt_Tag = 0;
         this._arbeitZeitMöglich = new ArrayList<Object>();
         if(nicht_arbeit == null){
             add_Arbeit_Möglich();
@@ -35,15 +45,17 @@ public class Nhan_Vien
         }
     }
     
-    public String getName(){
-        return _name;
-    }
-    
+    /**
+     * Methode arbeitZeitMoglich return List von Tage, die die Mitarbeiter in der Woche arbeiten konnen 
+     */
     public List<Object> arbeitZeitMöglich_List(){
         List <Object> arbeitZeitMöglich = this._arbeitZeitMöglich;  
         return arbeitZeitMöglich;
     }
     
+    /**
+     * 
+     */
     public void add_Arbeit_Möglich(){
         if(_ca_Montag == null && _ca_Dienstag == null && _ca_Mittwoch == null && _ca_Donnerstag == null && _ca_Freitag == null && _ca_Samstag == null && _ca_Sonntag == null){
             throw new IllegalArgumentException("Nhan vien nay nghi ca tuan nay");    
@@ -115,6 +127,10 @@ public class Nhan_Vien
         return bool;
     }
     
+    public String getName(){
+        return _name;
+    }
+    
     public int arbeitszeit_Anmelden (int stunde){
         if(stunde == 0){
             throw new IllegalArgumentException("Yeu cau dien lai so tieng lam hom nay");
@@ -127,4 +143,11 @@ public class Nhan_Vien
         return this._arbeitZeit_Monat;
     }
     
+    public void countTag(){
+    _gesamt_Tag++;    
+    }
+    
+    public int getGesamt_Tag(){
+        return this._gesamt_Tag;
+    }
 }

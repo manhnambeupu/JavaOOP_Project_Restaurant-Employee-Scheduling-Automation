@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=Woche
+comment0.text=\r\n\ Dieser\ Klasse\ modelliert\ die\ Tage\ und\ Arbeitsschicht\ der\ Tages\ in\ der\ Woche\ \ \r\n\ @author\ (Tran\ Manh\ Nam)\r\n\ @version\ (22.08.2023)\r\n
 comment1.params=
 comment1.target=Woche()
 numComments=2
