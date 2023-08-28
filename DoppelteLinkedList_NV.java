@@ -1,3 +1,4 @@
+import java.util.Random;
 public class DoppelteLinkedList_NV
 {
     private Node_NV head;
@@ -119,5 +120,84 @@ public class DoppelteLinkedList_NV
         temp = head;
         head = tail;
         tail = temp;
+    }
+    
+    /**
+     * Size of Doubly_LinkedList
+     */
+    public int size(){
+        int count = 0;
+        Node_NV cur = head;
+        while (cur != null) {
+            count++;
+            cur = cur.next;
+        }
+        return count;
+    }
+    
+    /**
+     * Get Value von Index
+     * @param index ist index von ein Nhan_Vien object in DopplteLinkedList
+     */
+    public Nhan_Vien getValueAtIndex(int index) {
+        if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException("Index ist nicht vernunftig.");
+        }
+
+        Node_NV current = head;
+        int currentPosition = 0;
+        
+        while (current != null && currentPosition < index) {
+            current = current.next;
+            currentPosition++;
+        }
+        return current._nv;
+    }
+    /**
+     * Set Value bei Index
+     */
+    public void setValueAtIndex(int index, Nhan_Vien newValue) {
+        if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException("Index nằm ngoài khoảng cho phép.");
+        }
+
+        Node_NV cur = head;
+        int currentPosition = 0;
+
+        while (cur != null && currentPosition < index) {
+            cur = cur.next;
+            currentPosition++;
+        }
+
+        cur._nv = newValue;
+    }
+    /**
+     * shuffle List
+     */
+    public void shuffle(Random random) {
+        int size = size();
+        for (int i = size - 1; i > 0; i--) {
+            int j = random.nextInt(i + 1);
+            swapValuesAtIndexes(i, j);
+        }
+    }
+
+    private void swapValuesAtIndexes(int i, int j) {
+        Node_NV nodeI = getNodeAtIndex(i);
+        Node_NV nodeJ = getNodeAtIndex(j);
+
+        Nhan_Vien temp = nodeI._nv;
+        nodeI._nv = nodeJ._nv;
+        nodeJ._nv = temp;
+    }
+
+    private Node_NV getNodeAtIndex(int index) {
+        Node_NV current = head;
+        int currentPosition = 0;
+        while (current != null && currentPosition < index) {
+            current = current.next;
+            currentPosition++;
+        }
+        return current;
     }
 }

@@ -11,8 +11,8 @@ public class minNhanVien
          _min_NV_in_Tag[4] = 2;
          _min_NV_in_Tag[5] = 2;
          _min_NV_in_Tag[6] = 2;
-         _min_NV_in_Tag[7] = 3;
-         _min_NV_in_Tag[8] = 3;
+         _min_NV_in_Tag[7] = 2;
+         _min_NV_in_Tag[8] = 2;
     }
     
     public int[] ShowMinNhanVien(){

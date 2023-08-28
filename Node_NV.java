@@ -1,6 +1,6 @@
 public class Node_NV
 {
-    private Nhan_Vien _nv;
+    Nhan_Vien _nv;
     Node_NV prev;
     Node_NV next;
 
@@ -13,5 +13,5 @@ public class Node_NV
         this.prev = null;
         this.next = null;
     }
-     
+
 }
