@@ -200,4 +200,30 @@ public class DoppelteLinkedList_NV
         }
         return current;
     }
+    /**
+     * Loop from Head to Tail
+     */
+    public void iterateForward() {
+        Node_NV current = head;
+
+        System.out.print("Durchsuchen Sie die Liste von Anfang bis Ende: ");
+        while (current != null) {
+            System.out.print(current._nv + " ");
+            current = current.next;
+        }
+        System.out.println();
+    }
+    /**
+     * Loop from Tail back to Head
+     */
+    public void iterateBackward() {
+        Node_NV current = tail;
+
+        System.out.print("Durchsuchen Sie die Liste von unten nach oben: ");
+        while (current != null) {
+            System.out.print(current._nv + " ");
+            current = current.prev;
+        }
+        System.out.println();
+    }
 }
