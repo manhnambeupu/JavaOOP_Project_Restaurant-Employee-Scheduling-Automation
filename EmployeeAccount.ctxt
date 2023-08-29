@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=EmployeeAccount
+comment0.text=\r\n\ Account\ fur\ Mitarbeiter\r\n\ @author\ (Manh\ Nam\ Tran)\ \r\n\ @version\ (29.08.2023)\r\n
+comment1.params=username\ password
+comment1.target=EmployeeAccount(java.lang.String,\ java.lang.String)
+comment1.text=\r\n\ Initialisiert\ das\ Konto\ mit\ username\ und\ passwort\r\n\ @param\ username\ ist\ name\ der\ Mitarbeiter,\ bitte\ keine\ leerzeichnen\ \r\n\ @param\ password\ ist\ passwort\ der\ Mitarbeiter,\ bitte\ keine\ leerzeichnen\ \r\n
+comment2.params=
+comment2.target=java.lang.String\ getUsername()
+comment2.text=\r\n\ Username\r\n
+comment3.params=
+comment3.target=java.lang.String\ getPassword()
+comment3.text=\r\n\ Passwort\r\n
+numComments=4

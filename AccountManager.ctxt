@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=AccountManager
+comment1.params=
+comment1.target=AccountManager()
+comment1.text=\r\n\ Initialisiert\ AccountManager\ ein\ HashMap\r\n
+comment2.params=username\ password
+comment2.target=void\ registerAccount(java.lang.String,\ java.lang.String)
+comment2.text=\r\n\ Registiert\ ein\ neues\ Konto\r\n\ @param\ username\ ist\ name\ der\ Mitarbeiter\r\n\ @param\ password\ ist\ passwort\ der\ Mitarbeiter\r\n
+comment3.params=username\ password
+comment3.target=boolean\ authenticate(java.lang.String,\ java.lang.String)
+comment3.text=\r\n\ Uberprufen\ ob\ username\ und\ passwort\ richtig\ sind\r\n\ @param\ username\ ist\ name\ der\ Mitarbeiter\r\n\ @param\ password\ ist\ passwort\ der\ Mitarbeiter\r\n
+comment4.params=filename
+comment4.target=void\ save_accountsToFile(java.lang.String)
+comment4.text=\r\n\ Speichert\ Daten\ Username\ und\ Password\ in\ .txt\ file\r\n\ @param\ filename\ ist\ name\ des\ File\ \r\n
+comment5.params=filename
+comment5.target=void\ load_accountsFromFile(java.lang.String)
+comment5.text=\r\n\ Liest\ die\ Informationen\ des\ Konto\r\n\ @param\ filename\ ist\ name\ des\ File\ \r\n
+numComments=6

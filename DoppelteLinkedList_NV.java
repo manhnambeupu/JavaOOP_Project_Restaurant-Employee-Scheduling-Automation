@@ -200,6 +200,7 @@ public class DoppelteLinkedList_NV
         }
         return current;
     }
+    
     /**
      * Loop from Head to Tail
      */
