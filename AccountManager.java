@@ -57,12 +57,12 @@ public class AccountManager {
                 writer.newLine();
             }
         } catch (IOException e) {
-            e.printStackTrace(); //throw exception , falls gibt es
+            e.printStackTrace(); //throw exception , falls es gibt
         }
     }
 
     /**
-     * Liest die Informationen des Konto
+     * Liest die Informationen des Konto von ein File und speichert in _accounts-HashMap
      * @param filename ist name des File 
      */
     public void load_accountsFromFile(String filename) {
@@ -78,7 +78,7 @@ public class AccountManager {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace(); //throw exception , falls gibt es
+            e.printStackTrace(); //throw exception , falls es gibt
         }
     }
 }

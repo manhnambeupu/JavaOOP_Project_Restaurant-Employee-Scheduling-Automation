@@ -14,5 +14,5 @@ comment4.target=void\ save_accountsToFile(java.lang.String)
 comment4.text=\r\n\ Speichert\ Daten\ Username\ und\ Password\ in\ .txt\ file\r\n\ @param\ filename\ ist\ name\ des\ File\ \r\n
 comment5.params=filename
 comment5.target=void\ load_accountsFromFile(java.lang.String)
-comment5.text=\r\n\ Liest\ die\ Informationen\ des\ Konto\r\n\ @param\ filename\ ist\ name\ des\ File\ \r\n
+comment5.text=\r\n\ Liest\ die\ Informationen\ des\ Konto\ von\ ein\ File\ und\ speichert\ in\ _accounts-HashMap\r\n\ @param\ filename\ ist\ name\ des\ File\ \r\n
 numComments=6

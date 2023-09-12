@@ -214,6 +214,7 @@ public class DoppelteLinkedList_NV
         }
         System.out.println();
     }
+    
     /**
      * Loop from Tail back to Head
      */

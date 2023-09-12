@@ -22,8 +22,7 @@ public class Nhan_Vien
     /**
      * Initialisiert Object-Mitarbeiter
      */
-    public Nhan_Vien(String name, int[]nicht_arbeit,int stunde){
-        this._arbeitZeit_Monat = stunde;
+    public Nhan_Vien(String name, int[]nicht_arbeit){
         this._name = name;
         this._ca_Montag = new Montag(); 
         this._ca_Dienstag = new Dienstag(); 
@@ -48,9 +47,8 @@ public class Nhan_Vien
     /**
      * Methode arbeitZeitMoglich return List von Tage, die die Mitarbeiter in der Woche arbeiten konnen 
      */
-    public List<Object> arbeitZeitMöglich_List(){
-        List <Object> arbeitZeitMöglich = this._arbeitZeitMöglich;  
-        return arbeitZeitMöglich;
+    public List<Object> getPlan(){
+        return _arbeitZeitMöglich;
     }
     
     /**
@@ -149,5 +147,44 @@ public class Nhan_Vien
     
     public int getGesamt_Tag(){
         return this._gesamt_Tag;
+    }
+    
+    public void getPlanFull(){
+        System.out.println(getName() + "(ngay co the lam trong tuan)");
+        for (Object obj : _arbeitZeitMöglich)
+        {
+            if (obj instanceof Montag)
+            {
+                Montag montag = (Montag) obj;
+                System.out.println("Montag: " + montag.ca());
+            } else if (obj instanceof Dienstag)
+            {
+                Dienstag dienstag = (Dienstag) obj;
+                System.out.println("Dienstag: " + dienstag.ca());
+            } else if (obj instanceof Mittwoch)
+            {
+                Mittwoch mittwoch = (Mittwoch) obj;
+                System.out.println("Mittwoch: " + mittwoch.ca());
+            } else if (obj instanceof Donnerstag)
+            {
+                Donnerstag donnerstag = (Donnerstag) obj;
+                System.out.println("Donnerstag: " + donnerstag.ca());
+            } else if (obj instanceof Freitag)
+            {
+                Freitag freitag = (Freitag) obj;
+                System.out.println("Freitag: " + freitag.ca());
+            } else if (obj instanceof Samstag)
+            {
+                Samstag samstag = (Samstag) obj;
+                System.out.println("Samstag: " + samstag.ca());
+            } else if (obj instanceof Sonntag)
+            {
+                Sonntag sonntag = (Sonntag) obj;
+                System.out.println("Sonntag: " + sonntag.ca());
+            } else
+            {
+                throw new IllegalArgumentException("Object khong hop le!");
+            }
+        }
     }
 }
